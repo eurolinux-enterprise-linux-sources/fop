@@ -1,7 +1,9 @@
+%global debug_package %{nil}
+
 Summary:        XSL-driven print formatter
 Name:           fop
 Version:        0.95
-Release:        4.2%{?dist}
+Release:        4.4%{?dist}
 License:        ASL 2.0
 Group:          Applications/Text
 Source0:        http://www.apache.org/dist/xmlgraphics/fop/source/%{name}-%{version}-src.tar.gz
@@ -19,7 +21,7 @@ Requires:       xml-commons-apis >= 1.3.04
 Requires:       jakarta-commons-httpclient
 Requires:       jakarta-commons-io >= 1.2
 Requires:       jakarta-commons-logging >= 1.0.4
-Requires:       java-1.6.0-openjdk
+Requires:       java >= 1:1.6.0
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:  ant
@@ -112,6 +114,14 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Dec 01 2015 Michael Simacek <msimacek@redhat.com> - 0.95-4.4
+- Don't require java 6 specifically
+- Resolves: rhbz#1282625
+
+* Fri Jun 21 2013 Mikolaj Izdebski <mizdebsk@redhat.com> - 0.95-4.3
+- Disable debuginfo package
+- Resolves: rhbz#631676
+
 * Tue Jun 01 2010 Deepak Bhole <dbhole@redhat.com> - 0.95-4.2
 - Make builds x86/x86_64 only for RHEL6
 
