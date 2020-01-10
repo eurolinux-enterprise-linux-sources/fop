@@ -1,7 +1,7 @@
 Name:		fop
 Summary:	XSL-driven print formatter
 Version:	1.1
-Release:	5%{?dist}
+Release:	6%{?dist}
 # ASL 1.1:
 # several files in src/java/org/apache/fop/render/awt/viewer/resources/
 # rest is ASL 2.0
@@ -118,6 +118,9 @@ install -p -m 644 %{SOURCE3} %{buildroot}%{_mavenpomdir}/JPP-%{name}.pom
 
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.1-6
+- Mass rebuild 2013-12-27
+
 * Fri Aug 02 2013 Michal Srb <msrb@redhat.com> - 1.1-5
 - Add create-tarball.sh script to SRPM
 
